@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2694968198976101418}
   - component: {fileID: 5118732393708152566}
   - component: {fileID: 6929978860866613878}
-  - component: {fileID: 5678674700557742699}
+  - component: {fileID: 4048184585720526940}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
+  jumpImpulse: 7
   _isMoving: 0
   _isFacingRight: 1
 --- !u!114 &5118732393708152566
@@ -242,6 +243,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f58a6fef-bfaa-4939-9545-f20e34a5727a
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2694968198976101418}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 89997b43-1b8d-435d-a2b9-116a0b784f6a
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -282,7 +299,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0016572475, y: -0.05244369}
   m_Size: {x: 0.09702349, y: 0.22016887}
   m_Direction: 0
---- !u!114 &5678674700557742699
+--- !u!114 &4048184585720526940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,6 +308,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8790664035455393401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d74149bfb6d47041b83e843e4219f05, type: 3}
+  m_Script: {fileID: 11500000, guid: a86b3707dd5ed8141834e0364f5ceb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  _isGrounded: 0
