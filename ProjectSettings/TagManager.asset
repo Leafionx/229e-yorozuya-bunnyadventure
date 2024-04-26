@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -41,8 +43,14 @@ TagManager:
   - name: Background
     uniqueID: 1706230933
     locked: 0
+  - name: Trap
+    uniqueID: 3988228243
+    locked: 0
   - name: Ground
     uniqueID: 716183867
+    locked: 0
+  - name: Player
+    uniqueID: 1027957275
     locked: 0
   - name: Default
     uniqueID: 0
