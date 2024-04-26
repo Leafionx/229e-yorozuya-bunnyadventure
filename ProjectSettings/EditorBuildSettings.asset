@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameplayScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/yoruzuya.unity
+    guid: 1c0fc723ade86644286a613fda275034
+  - enabled: 1
+    path: Assets/Scenes/endCredits.unity
+    guid: e894e2267f3c9624a8e8f6f88091ff35
   m_configObjects: {}

@@ -9,16 +9,20 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    
+    private GameManager gameManager;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        
+        gameManager = FindObjectOfType<GameManager>();
     }
 
-    public void TakeDamage(float _damage)
+    public void TakeDamage(float damage)
     {
-        currentHealth = Math.Clamp(currentHealth - _damage, 0, startingHealth);
+        currentHealth = Math.Clamp(currentHealth - damage, 0, startingHealth);
         if (currentHealth > 0)
         {
             anim.SetTrigger(AnimationStrings.hurt);
@@ -30,13 +34,15 @@ public class Health : MonoBehaviour
                 anim.SetTrigger(AnimationStrings.die);
                 GetComponent<PlayerController>().enabled = false;
                 dead = true;
+                
+                gameManager.EndGame();
             }
         }
     }
 
-    public void AddHealth(float _value)
+    public void AddHealth(float value)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth + value, 0, startingHealth);
     }
 
     public void Respawn()
