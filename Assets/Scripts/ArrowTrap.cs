@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ArrowTrap : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject arrow;
-    [SerializeField]
-    public Transform firePoint;
-    [SerializeField]
-    public float projectileSpeed = 10f;
-    [SerializeField]
-    public float fireRate = 0.5f;
-    [SerializeField]
+    [SerializeField] private GameObject arrow;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float projectileSpeed = 10f;
+    [SerializeField] private float fireRate = 0.5f;
     private float cooldownTime = 0f;
 
     private void Update()
@@ -24,12 +19,13 @@ public class ArrowTrap : MonoBehaviour
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
         GameObject projectile = Instantiate(arrow, firePoint.position, Quaternion.identity);
         
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        Vector2 shootDirection = Vector2.right;
+        
+        Vector2 shootDirection = (firePoint.right).normalized;
         
         rb.velocity = shootDirection * projectileSpeed;
     }
